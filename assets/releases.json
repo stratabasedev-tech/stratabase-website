@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "updated": "2026-11-05",
+  "releaseNotes": [
+    {
+      "version": "0.9.9.5 Alpha 2",
+      "dateLabel": "5 November 2026",
+      "channel": "development",
+      "status": "Testing",
+      "summary": "Project Library search, sorting and country filters; in-app Quick Log preview; laboratory Sample List with Batch Edit shortcut; streamlined QC summary and sidebar refinements.",
+      "limitations": "Development candidate only. Formal reviewer approvals and selective offline downloads are not active; full workflow testing is ongoing."
+    },
+    {
+      "version": "0.9.9.5 Alpha 1",
+      "dateLabel": "5 November 2026",
+      "channel": "development",
+      "status": "Testing",
+      "summary": "Field workflow consistency improvements, batch-edit pagination, recovery QC override, Data Review layout and update handling improvements.",
+      "limitations": "Development candidate; live multi-device integration and full lifecycle QA incomplete."
+    },
+    {
+      "version": "0.9.9.4",
+      "dateLabel": "5 November 2026",
+      "channel": "production",
+      "status": "Field candidate",
+      "summary": "Import exception handling for invalid source rows, earlier SPT/Point Load fixes, and Windows PWA icon updates.",
+      "limitations": "Controlled field candidate; additional QA and fixes identified."
+    },
+    {
+      "version": "0.9.9.3",
+      "dateLabel": "5 November 2026",
+      "channel": "development",
+      "status": "Development candidate",
+      "summary": "In-situ form state fixes and missing-field geological inheritance on editing existing Point Load records.",
+      "limitations": "Candidate status; do not treat as an independently certified stable release."
+    },
+    {
+      "version": "0.9.9.2",
+      "dateLabel": "5 November 2026",
+      "channel": "development",
+      "status": "Development candidate",
+      "summary": "Styled discontinuity follow-up, SPT running blow calculations and Point Load geological inheritance.",
+      "limitations": "Candidate version; later issues were addressed in subsequent builds."
+    },
+    {
+      "version": "0.9.9.1",
+      "dateLabel": "4 November 2026",
+      "channel": "development",
+      "status": "Development candidate",
+      "summary": "Data workflow changes including Geotech forms, Batch Edit and Smart Merge groundwork.",
+      "limitations": "Not a production-approved release."
+    },
+    {
+      "version": "0.9.8",
+      "dateLabel": "3 November 2026",
+      "channel": "production",
+      "status": "Stable baseline",
+      "summary": "Established GitHub version-control baseline and field-tested structural logging.",
+      "limitations": "Geotechnical form and editing issues were subsequently identified."
+    },
+    {
+      "version": "0.9.7",
+      "dateLabel": "Early November 2026",
+      "channel": "history",
+      "status": "Historical milestone",
+      "summary": "Structural logging ordering improvements and form refinements.",
+      "limitations": "Exact publication date requires archive verification."
+    },
+    {
+      "version": "0.9.6",
+      "dateLabel": "2026",
+      "channel": "history",
+      "status": "Historical milestone",
+      "summary": "Protection against duplicate active project codes.",
+      "limitations": "Exact publication date requires archive verification."
+    },
+    {
+      "version": "0.9.5",
+      "dateLabel": "2026",
+      "channel": "history",
+      "status": "Historical milestone",
+      "summary": "Email/password verification and organisation membership approval.",
+      "limitations": "Exact publication date requires archive verification."
+    },
+    {
+      "version": "0.9.4",
+      "dateLabel": "2026",
+      "channel": "history",
+      "status": "Historical milestone",
+      "summary": "Manual Google Drive archive, download and restore workflow.",
+      "limitations": "Exact publication date requires archive verification."
+    }
+  ]
+}
