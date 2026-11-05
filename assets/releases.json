@@ -1,7 +1,7 @@
 {
   "schema": 2,
   "updated": "2026-11-05",
-  "sourceNote": "Development history reconstructed from retained versioned ZIP names, prior project release descriptions, and dated archive metadata. Dates for early entries may reflect archive timestamps rather than public release dates.",
+  "sourceNote": "Release details expanded by examining version-specific README and RELEASE_NOTES documents within user-supplied Zips.zip archives. These are archived implementation notes, not independent proof of deployment or field acceptance. Early release dates are deliberately not guessed.",
   "releaseNotes": [
     {
       "version": "0.9.9.5 Alpha 2",
@@ -9,14 +9,16 @@
       "channel": "development",
       "status": "Testing",
       "summary": "Project Library search, sorting and country filters; in-app Quick Log preview; laboratory Sample List with Batch Edit shortcut; streamlined QC summary and sidebar refinements.",
-      "limitations": "Development candidate only. Formal reviewer approvals and selective offline downloads are not active; full workflow testing is ongoing.",
+      "limitations": "Archive notes describe this build; deployment and field acceptance are separate from source-code presence.",
       "changes": [
         "Project library search, sorting, country/status filtering introduced in development.",
         "Quick Log in-app factual preview and selected-investigation PDF access added for testing.",
         "Laboratory Sample List and sample Batch Edit entry points introduced.",
         "Log Review and QC summary navigation integrated into Data Review.",
         "Desktop sidebar and release-notes presentation iterated; formal reviewer approvals remain under development."
-      ]
+      ],
+      "sourceArchive": "StrataBase_v0.9.9.5_DEV_ALPHA2_CANDIDATE.zip",
+      "sourceDocument": "ALPHA2_README.txt"
     },
     {
       "version": "0.9.9.5 Alpha 1",
@@ -24,13 +26,15 @@
       "channel": "development",
       "status": "Testing",
       "summary": "Field workflow consistency improvements, batch-edit pagination, recovery QC override, Data Review layout and update handling improvements.",
-      "limitations": "Development candidate; live multi-device integration and full lifecycle QA incomplete.",
+      "limitations": "Archive notes describe this build; deployment and field acceptance are separate from source-code presence.",
       "changes": [
         "Expanded depth carry-forward and geological description reuse behaviours.",
         "Added Batch Edit pagination and an explicit excessive-recovery QC exception path.",
         "Introduced collapsible Data Review sections, desktop sidebar controls and update-notification revisions.",
         "Development checks passed; live field and multi-device regression testing remains necessary."
-      ]
+      ],
+      "sourceArchive": "StrataBase_v0.9.9.5_DEV_ALPHA1.zip",
+      "sourceDocument": "FIELD_QA_README.txt"
     },
     {
       "version": "0.9.9.4",
@@ -38,13 +42,15 @@
       "channel": "production",
       "status": "Field candidate",
       "summary": "Import exception handling for invalid source rows, earlier SPT/Point Load fixes, and Windows PWA icon updates.",
-      "limitations": "Controlled field candidate; additional QA and fixes identified.",
+      "limitations": "",
       "changes": [
         "Added import exception handling: invalid source rows can be excluded with an exception report while valid records proceed.",
         "Retained recovery, SPT and Point Load improvements from development candidates.",
         "Updated Windows PWA icon assets and manifest references.",
         "Released as a controlled production field candidate; later QA identified form and review issues."
-      ]
+      ],
+      "sourceArchive": "StrataBase_v0.9.9.4_Netlify_Production_Upload.zip",
+      "sourceDocument": "FIELD_RELEASE_README.txt"
     },
     {
       "version": "0.9.9.3",
@@ -52,7 +58,7 @@
       "channel": "development",
       "status": "Development candidate",
       "summary": "In-situ form state fixes and missing-field geological inheritance on editing existing Point Load records.",
-      "limitations": "Candidate status; do not treat as an independently certified stable release.",
+      "limitations": "No version-specific release notes found in the supplied archive; changes listed from project development history rather than an authoritative changelog.",
       "changes": [
         "Fixed inconsistent in-situ SPT/Point Load form visibility when editing or changing test method.",
         "Improved geological material and weathering inheritance for existing Point Load tests when fields are missing.",
@@ -65,12 +71,14 @@
       "channel": "development",
       "status": "Development candidate",
       "summary": "Styled discontinuity follow-up, SPT running blow calculations and Point Load geological inheritance.",
-      "limitations": "Candidate version; later issues were addressed in subsequent builds.",
+      "limitations": "Archive notes describe this build; deployment and field acceptance are separate from source-code presence.",
       "changes": [
-        "Replaced generic discontinuity follow-up with an in-app styled prompt.",
-        "Added automatic SPT N-value calculations with safeguards for partial penetration and override.",
-        "Introduced depth-based Point Load geological material/weathering inheritance."
-      ]
+        "Install contents into development clone root, preserve .git / node_modules / supabase files.",
+        "Inspect diff, commit and push development; ensure Netlify points to development.",
+        "Test login, project sync, discontinuity repeated set, complete/partial/refusal SPT, manual override, point-load material inheritance, edit/save/reload, and Excel export."
+      ],
+      "sourceArchive": "StrataBase_v0.9.9.2_DEV_FIELD_FIX_CANDIDATE.zip",
+      "sourceDocument": "FIELD_QA_README.txt"
     },
     {
       "version": "0.9.9.1",
@@ -84,7 +92,8 @@
         "Introduced or expanded spreadsheet-style Batch Edit and conservative Smart Merge workflows.",
         "Reorganised data import, exports and Data Review entry points.",
         "Development-only candidate; not signed off for production."
-      ]
+      ],
+      "sourceArchive": "StrataBase_APP_v0.9.9.1_DATA_WORKFLOW_CANDIDATE.zip"
     },
     {
       "version": "0.9.8",
@@ -92,37 +101,59 @@
       "channel": "production",
       "status": "Stable baseline",
       "summary": "Established GitHub version-control baseline and field-tested structural logging.",
-      "limitations": "Geotechnical form and editing issues were subsequently identified.",
+      "limitations": "",
       "changes": [
-        "Preserved as the first GitHub-tagged stable baseline.",
-        "Enhanced field import/export and structural logging behaviour.",
-        "Field testing identified Geotech create/edit differences, motivating subsequent development."
-      ]
+        "Project Workbook now exports curated engineering columns, not cloud IDs and JSON import provenance; investigation-specific blank columns are omitted; searchable worksheet filters; structural resolved geological origin included; non-oriented Beta not represented as valid.",
+        "Spreadsheet importer recognises additional BH/TP column headings, keeps editable worksheet/header/field mapping, shows confirmation/preflight counts, automatically skips existing/overlapping geological and coring intervals, and aborts when a local pre-import checkpoint cannot be created. This release deliberately does not automatically merge or replace conflicting geology.",
+        "Omega multi-sheet importer now skips matching or overlapping geology records rather than appending known duplicates.",
+        "Structural form order puts Infill/Thickness before Gamma/Geological Origin.",
+        "Beta disabled for Spun/Not Oriented in add/edit; existing old Beta values preserved rather than destroyed; orientation confidence defaults remain.",
+        "Theme text contrast strengthened; JARVIS label replaced with Core Mode; branded app installation icon restored while the distinctive new tent/strata Core remains in sidebar as a responsive sync indicator.",
+        "Logger and Data Review editors now share ordered field definitions. Coring edit mirrors From/To, measured recovered lengths and fracture count, followed by calculated read-only Run Length / TCR% / SCR% / RQD% / FF and run comments.",
+        "Coring derived fields recalculate live and cannot be changed directly. On save, recovery totals are recalculated from measurements, invalid or overlapping intervals are rejected before mutating the original record.",
+        "Structural editing keeps the requested field order, orientation Beta lockout and controlled inputs.",
+        "Primary application icon remains the original StrataBase SB mark, including new padded maskable icons. The Core is a secondary navigation/status symbol.",
+        "Editing: field ordering now follows primary input order for coring, geology, structure, test pits, samples, groundwater, etc., where those fields are present. Coring editor computes run length and recovery percentages from editable depths/recovery totals; calculated fields are read-only. Coring edits validate against overlapping intervals and improbable measurements before saving.",
+        "Data Review shares the logging editor's input-field definitions. Recognised sample categories and groundwater rates retain dropdowns, and dates use date inputs."
+      ],
+      "sourceArchive": "StrataBase_v0.9.8_FIELD_IMPORT_EXPORT_EDIT.zip",
+      "sourceDocument": "RELEASE_NOTES.md"
     },
     {
       "version": "0.9.7",
-      "dateLabel": "Early November 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Historical milestone",
       "summary": "Structural logging ordering improvements and form refinements.",
-      "limitations": "Exact publication date requires archive verification.",
+      "limitations": "",
       "changes": [
-        "Structural logging field order and orientation-related inputs refined.",
-        "Improved geotechnical field logging layout and duplicate-record handling where applicable.",
-        "Historical deployable archive retained."
-      ]
+        "Reduce spurious parent project/location revisions when logging structures, and guard local unsynced descendants from cloud parent deletions, including manual Keep Cloud resolution.",
+        "Human-readable cloud conflict comparisons with explicit local/cloud values (no automatic conflict merge).",
+        "Structural editing preserves controlled selections and numerical input modes; form order updated; orientation/confidence defaults revised.",
+        "Geology origin for structures calculated from logged geology intervals with manual override, including in exported structural workbooks.",
+        "Better QC depth navigation, quieter draft persistence during sync, duplicate investigation ID protection, sidebar closure on Project Settings navigation.",
+        "Light/Dark/System interface settings; original StrataBase Core symbol with sync-state visual indication; PDF/Excel remain light.",
+        "Manifest identity and installation name restored to production values. Versioned, cache-friendly PWA icons and maskable options added to help refresh desktop/mobile icon caches. Windows icon refresh is OS-controlled and may still require shortcut repair."
+      ],
+      "sourceArchive": "StrataBase_v0.9.7_DEPLOYABLE.zip",
+      "sourceDocument": "RELEASE_NOTES.md"
     },
     {
       "version": "0.9.6",
-      "dateLabel": "2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Historical milestone",
       "summary": "Protection against duplicate active project codes.",
-      "limitations": "Exact publication date requires archive verification.",
+      "limitations": "",
       "changes": [
-        "Introduced duplicate active project code protection.",
-        "Email/password authentication, verification and organisation approval expanded through the v0.9.5–v0.9.6 development period."
-      ]
+        "Local and Data Review horizon editors now provide multiple independent notes and preserve the notes array when saving.",
+        "New combined PDF print option for all investigations of the selected type, while retaining the individual log option. Browser Print > Save as PDF creates the file.",
+        "Test pit PDF: depth values moved into a dedicated margin; sample marker moved to the midpoint of the recorded interval; groundwater symbol and depth shown; EOH and notes aligned with the description panel; TP header CLIENT line removed; basic lithology terms and geological origin displayed in bold uppercase; separate numbered horizon notes.",
+        "Cloud preflight checks duplicate Project/PA numbers against local and cloud project identifiers and avoids sending known collisions to the database.",
+        "With StrataBase_v0.9.6_ACCESS_STATUS.sql applied, a declined user sees a decline message and can enter another organisation join code. Same-organisation retry restrictions remain server-side."
+      ],
+      "sourceArchive": "StrataBase_v0.9.6.zip",
+      "sourceDocument": "RELEASE_NOTES.md"
     },
     {
       "version": "0.9.5",
@@ -130,7 +161,7 @@
       "channel": "history",
       "status": "Historical milestone",
       "summary": "Email/password verification and organisation membership approval.",
-      "limitations": "Exact publication date requires archive verification.",
+      "limitations": "No version-specific release notes found in the supplied archive; changes listed from project development history rather than an authoritative changelog.",
       "changes": [
         "Expanded email/password sign-in with email verification.",
         "Added organisation access-request and approval workflow."
@@ -138,26 +169,39 @@
     },
     {
       "version": "0.9.4",
-      "dateLabel": "2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Historical milestone",
       "summary": "Manual Google Drive archive, download and restore workflow.",
-      "limitations": "Exact publication date requires archive verification.",
+      "limitations": "",
       "changes": [
-        "Introduced a manual Google Drive archive, downloadable backup and restore workflow.",
-        "Cloud backup round-trip testing was performed during development."
-      ]
+        "Added Google-or-email sign-in interface: email/password sign-in, account registration, email confirmation step and password recovery flow. Existing Google sign-in and trusted-device offline cache identifiers are retained. Microsoft sign-in remains disabled until authorised/configured.",
+        "Added organisation access requests: users who have authenticated and confirmed their email request membership using a private join code; existing owners/admins can review pending requests and assign viewer/reviewer/logger/project-manager roles in Account & Device. Membership continues to be enforced by Supabase; the email domain alone never grants access.",
+        "Added Project Workbook in Data & Reports. Export a complete project's logged records, one investigation type, or one location into an Excel file with separate worksheets for available datasets. The export reads records without changing stored data.",
+        "Added organisation-level laboratory directory synchronisation, using a new guarded sb_org_labs table and RPC; entries created in one project are available to other projects in the same organisation after sync. Default built-in labs remain local defaults.",
+        "Added borehole dip and azimuth/reference controls, optional oriented-core flag for rock mechanics; non-oriented structures record Alpha without requiring Beta, while existing imported measurements are preserved. Both KP and SAIEG/generic workflows follow the orientation flag.",
+        "Replaced the embedded KP logo on print reports with a PNG containing transparency to avoid a mismatched opaque rectangle.",
+        "Preserved current project data, auth/session storage keys, IndexedDB store name, local checkpoint behaviour, cloud sync architecture and v0.9.3 sorting controls."
+      ],
+      "sourceArchive": "StrataBase_v0.9.4.zip",
+      "sourceDocument": "RELEASE_NOTES.md"
     },
     {
       "version": "0.9.3",
-      "dateLabel": "2 November 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Archived build",
       "summary": "An early named StrataBase application release.",
-      "limitations": "Archived package retained; detailed line-by-line changes not yet verified.",
+      "limitations": "",
       "changes": [
-        "An early named StrataBase application release."
-      ]
+        "Table sorting immediately above borehole and test-pit logging tables (depth ascending, depth descending, recently added) and project Data Review. Sort preferences are per device and DO NOT mutate records.",
+        "Project-only JSON import/export in Data & Reports. Device and organisation JSON imports are separate in Account & Device, with explicit scope guards.",
+        "Google Drive archival controls enabled after previously confirmed manual round-trip; success uses non-blocking toast.",
+        "Device-triggered automatic archiving disabled in favour of separately configured server cron to avoid one archive per connected device.",
+        "Archive/download path is unchanged; a separate v0.9.3 Edge Function update and SQL schedule are supplied in the admin package."
+      ],
+      "sourceArchive": "StrataBase_v0.9.3.zip",
+      "sourceDocument": "RELEASE_NOTES.md"
     },
     {
       "version": "0.9.2",
@@ -165,197 +209,410 @@
       "channel": "history",
       "status": "Archived build",
       "summary": "An intermediate early StrataBase iteration.",
-      "limitations": "Full change record needs source comparison.",
+      "limitations": "No version-specific release notes found in the supplied archive; changes listed from project development history rather than an authoritative changelog.",
       "changes": [
         "An intermediate early StrataBase iteration."
       ]
     },
     {
       "version": "0.9.1",
-      "dateLabel": "2 November 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Archived build",
       "summary": "An intermediate early StrataBase iteration.",
-      "limitations": "Full change record needs source comparison.",
+      "limitations": "",
       "changes": [
-        "An intermediate early StrataBase iteration."
-      ]
+        "Existing infrastructure configured: targets the existing https://app.stratabase.co.za website and existing Supabase project ttgdyhycaxbrysveyusi, using its browser-safe public publishable key. The domain and Google OAuth settings are not recreated.",
+        "Authentication: StrataBase branded Google sign-in; server-authorised organisation role gate; returning approved device retains local/offline access.",
+        "Offline: no CDN runtime dependency; XLSX engine, JS, styles, fonts/images/icons and app assets are self-contained in the PWA cache. New cache name to force update without clearing user storage. A trusted device and proper backup remain necessary.",
+        "Interface decisions: dashboard kept logging-focused; account/offline/sync/backup settings in Account & Device; hidden system metadata; Clear/Cancel; + New Test Pit; legitimate multiple joints at one horizon; faint horizontally centred Iron Man reactor symbol in sidebar.",
+        "Omega importer: recognises the real v20 export and maps boreholes/coring/geotech/structures. Run QC and Export Audit excluded. Original source-cell values and provenance retained. Tested against the actual 2026-11-02 workbook: 6 holes, 439 coring runs, 175 geotech intervals, 1,128 structures; reimport skipped all 1,742 source records.",
+        "Data recovery fix: downloaded StrataBase Recovery Checkpoint JSON is now accepted by the JSON restore importer, subject to organisation check and a protected pre-restore checkpoint. This corrects a v0.9.0 gap.",
+        "Google Drive: feature code provided separately in backend source package. Explicitly disabled in public configuration until verified. App does not report an unconfigured archive as active."
+      ],
+      "sourceArchive": "StrataBase_v0.9.1_ADMIN_SOURCE.zip",
+      "sourceDocument": "RELEASE_NOTES_v0.9.1.md"
     },
     {
       "version": "0.9.0",
-      "dateLabel": "2 November 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Field beta",
-      "summary": "Field beta and Omega mapping iterations documented in retained archive names.",
-      "limitations": "Full change record needs source comparison.",
+      "summary": "Professional Continue with Google sign-in gate before accessing the workspace. Access is granted only when an administrator has added the Google user's UUID to sb_memberships in Supabase. No application-side signup or organisation creation. Returning approved devices may open offline with cached approval.",
+      "limitations": "",
       "changes": [
-        "Field beta and Omega mapping iterations documented in retained archive names."
-      ]
+        "Professional Continue with Google sign-in gate before accessing the workspace. Access is granted only when an administrator has added the Google user's UUID to sb_memberships in Supabase. No application-side signup or organisation creation. Returning approved devices may open offline with cached approval.",
+        "Account & Device in the sidebar: organisation identity, cloud sync, unresolved conflicts, end-device offline checks, local checkpoint controls, Google Drive archive controls, legacy project migration and Omega workbook import link. The logging dashboard no longer carries the device status card.",
+        "Subtle, near-transparent arc-reactor / triangular forge easter egg, centered in the sidebar, not in exported reports.",
+        "Offline-first account-scoped IndexedDB snapshot storage, plus per-account recovery checkpoints and backup export. The XLSX parser/writer is shipped inside the app: no external JavaScript, CDN, or Internet connection is necessary for Excel functions in a supported browser.",
+        "Cloud database schema and Row Level Security (RLS); organisation-scoped projects, locations, records; compare-and-swap (CAS) revision checking; collision/conflict review; deletions represented by tombstones. This needs live multi-device integration testing before use on irreplaceable data.",
+        "Organisation-owned Google Drive backup backend (Supabase Edge Function), capable of creating SHA-256-labelled backups, listing archives, checksum-verifying downloads, and supplying JSON files compatible with StrataBase's restore path. Google sign-in and the Google Drive service account are separate integrations.",
+        "Omega Logger XLSX / CSV migration wizard, with sheet detection, editable dataset classification, borehole defaults, depth validation, 1,000+ row support, preflight totals/warnings, no silent removal of same-depth joint measurements, idempotence by source file + sheet + row where possible, and a protected pre-import checkpoint. Original sheet values and provenance are retained with records."
+      ],
+      "sourceArchive": "StrataBase_v0.9.0_FIELD_BETA.zip",
+      "sourceDocument": "README_v0.9.0.md"
     },
     {
       "version": "0.8.8",
-      "dateLabel": "2 November 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Archived build",
-      "summary": "Official-final-labelled package preserved in the archive.",
-      "limitations": "Full change record needs source comparison.",
+      "summary": "Restored dashboard/report helper functions omitted by the first 0.8.8 packaging pass.",
+      "limitations": "",
       "changes": [
-        "Official-final-labelled package preserved in the archive."
-      ]
+        "Restored dashboard/report helper functions omitted by the first 0.8.8 packaging pass.",
+        "Fixed service-worker installation so external Excel/CDN availability can never block the offline app shell from installing.",
+        "Prevented first service-worker activation from forcing an unwanted app reload; explicit updates still checkpoint before activation.",
+        "Made the external Excel helper asynchronous so loss of internet does not delay StrataBase startup.",
+        "Fixed saved geology/overview/discontinuity/notes drafts remaining behind after a successful save.",
+        "Removed duplicate Data Review grouping options.",
+        "Standardized spreadsheet-imported locations and records with stable IDs, organisation/project/location IDs, device/user metadata, revisions and tombstone fields for the v0.9 sync foundation.",
+        "Sample laboratory management now prefers stable record IDs.",
+        "Tablet drawer closes via hamburger, X, backdrop, swipe-left or Escape.",
+        "Exact last location/module resume.",
+        "Local unsaved-draft recovery.",
+        "Local save + network status.",
+        "Larger field-readiness/status surface for tablet use.",
+        "IndexedDB recovery checkpoints: daily, manual, end-shift, pre-import and pre-update.",
+        "Undo delete + local trash/tombstone foundation.",
+        "Project Field Status + End Shift + shift summary.",
+        "Recovery checkpoint download/restore.",
+        "Report readiness checks before PDF generation."
+      ],
+      "sourceArchive": "StrataBase_v0.8.8_OFFICIAL_FINAL.zip",
+      "sourceDocument": "README_v0.8.8.txt"
     },
     {
       "version": "0.8.7",
-      "dateLabel": "28 October 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Archived build",
-      "summary": "Early multi-investigation StrataBase application build preserved.",
-      "limitations": "Full change record needs source comparison.",
+      "summary": "Investigation Summary can also group Test Pit horizons by Consistency / Density or Origin + Consistency.",
+      "limitations": "",
       "changes": [
-        "Early multi-investigation StrataBase application build preserved."
-      ]
+        "Investigation Summary can also group Test Pit horizons by Consistency / Density or Origin + Consistency.",
+        "Test Pit print layout rebuilt toward the supplied KP field-log reference.",
+        "Test Pit scale automatically chooses a practical scale so the complete profile fits one page.",
+        "Test Pit horizon notes, EOH notes, groundwater and sample notes are numbered automatically.",
+        "Geotechnical Core Borehole report is now A4 landscape with engineering parameter columns, recovery columns, depth scale, stratigraphy and descriptions aligned by depth.",
+        "Core parameter columns pull fabric data from geology horizons and joint-set data from discontinuities.",
+        "Percussion report is now A4 portrait at 1:100 with five penetration/drilling metric columns, depth scale, stratigraphy and descriptions.",
+        "Company report header uses the supplied Knight Piesold logo when the project company is Knight Piesold.",
+        "Horizon hatch artwork remains provisional until the final legend pack is supplied.",
+        "Removed low-value helper text that crowded routine field capture.",
+        "Standard suggestions remain available without explaining obvious fields to trained loggers.",
+        "Lookup descriptions are retained where they genuinely replace a standards cheat-sheet (Jn, Jr, Ja, joint spacing/grain ranges, orientation/confidence/JRC).",
+        "Rock Mechanics Geotech no longer asks for Discontinuity Type.",
+        "Percussion capture now includes the five metric fields shown on the supplied percussion log.",
+        "PWA field-readiness checks are now visible on the dashboard. The Excel engine is still an external dependency in this alpha and remains on the v1.0 hardening list.",
+        "Dashboard includes a compact Device & Offline readiness card and install button when the browser exposes PWA installation.",
+        "Service worker precaches the core local app shell."
+      ],
+      "sourceArchive": "StrataBase_v0.8.7.zip",
+      "sourceDocument": "README_v0.8.7.txt"
     },
     {
       "version": "0.8.6",
-      "dateLabel": "27 October 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Archived build",
-      "summary": "Early StrataBase application build preserved.",
-      "limitations": "Full change record needs source comparison.",
+      "summary": "Jn, Jr and Ja now use compact coded dropdowns with short field descriptions.",
+      "limitations": "",
       "changes": [
-        "Early StrataBase application build preserved."
-      ]
+        "Jn, Jr and Ja now use compact coded dropdowns with short field descriptions.",
+        "Rock-mechanics grain size and joint spacing use coded dropdowns with ranges/descriptions.",
+        "Rock fabric uses coded values where a single classification is required.",
+        "Horizon capture now has Soil / Rock modes.",
+        "Switching mode keeps the same interval workflow and the next horizon still inherits the previous To depth.",
+        "Soil mode retains field-description inputs.",
+        "Rock mode uses colour, weathering, grain size, fabric, joint spacing, strength and origin.",
+        "Horizon notes use + Note entries so each note can be numbered cleanly in reports.",
+        "EOH depth auto-populates from the deepest recorded test-pit horizon.",
+        "Termination Reason is assisted free text: suggestions are available, but exact wording can be typed.",
+        "EOH notes use separate + Note entries.",
+        "Test-pit PDF notes automatically include groundwater observations, manual EOH notes and samples; numbering continues automatically.",
+        "Test-pit PDF scale selects a sensible scale to fit the full profile on one page.",
+        "Test-pit PDF layout has been rebuilt toward the supplied reference format with a profile column, depth callouts, description area, EOH/notes and sample/water markers.",
+        "Fabric is captured once on the geology horizon using coded fabric values.",
+        "Fabric spacing and fabric inclination moved to the geology horizon.",
+        "Discontinuity entry no longer repeats fabric fields.",
+        "After saving a rock horizon, StrataBase can take the logger directly to Discontinuities with From/To pre-filled."
+      ],
+      "sourceArchive": "StrataBase_v0.8.6.zip",
+      "sourceDocument": "README_v0.8.6.txt"
     },
     {
       "version": "0.8.5",
-      "dateLabel": "27 October 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Archived build",
-      "summary": "Early StrataBase application build preserved.",
-      "limitations": "Full change record needs source comparison.",
+      "summary": "Formal classification/code fields stay controlled.",
+      "limitations": "",
       "changes": [
-        "Early StrataBase application build preserved."
-      ]
+        "Formal classification/code fields stay controlled.",
+        "Descriptive geology/soil fields are assisted free text: standard terms are suggested, but ranges, transitions and qualifiers can be typed naturally.",
+        "Moisture, consistency/density and soil structure are assisted free text.",
+        "Suggestions appear while typing, but entries such as \"loose tending to medium dense\" or \"moist becoming wet\" remain valid.",
+        "Weathering, strength, grain size, fabric and joint spacing are assisted free text.",
+        "Entries such as \"strong with sporadic lenses of very weak rock\" or \"moderately weathered with highly weathered seams\" are valid.",
+        "Edit screens use the same assisted behaviour.",
+        "Import mapping accepts descriptive values.",
+        "Formal rock-mechanics classification inputs remain controlled dropdowns where one coded value is required for calculations/QC.",
+        "The main StrataBase logo is embedded directly in index.html, eliminating a separate logo request.",
+        "Same-origin app files are precached by the service worker."
+      ],
+      "sourceArchive": "StrataBase_v0.8.5.zip",
+      "sourceDocument": "README_v0.8.5.txt"
     },
     {
       "version": "0.8.3",
-      "dateLabel": "27 October 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Archived build",
-      "summary": "Early StrataBase application build preserved.",
-      "limitations": "Full change record needs source comparison.",
+      "summary": "Friendly labels replace raw database field names (e.g. TCR (%), Fracture Frequency, Run Length).",
+      "limitations": "",
       "changes": [
-        "Early StrataBase application build preserved."
-      ]
+        "Friendly labels replace raw database field names (e.g. TCR (%), Fracture Frequency, Run Length).",
+        "Coring / Recovery logging tables now have Edit and Delete actions.",
+        "All local logging tables use the same direct Edit + Delete pattern.",
+        "Data Review also uses friendly labels.",
+        "Derived lengths and displayed depths are limited to a practical maximum of 2 decimal places.",
+        "Coring percentages remain 1 decimal; fracture frequency remains 2 decimals.",
+        "Coring now includes Comments / Run Notes in capture, edit, review and import.",
+        "Import schema now follows the project Rock Mechanics configuration.",
+        "KP Rock Mechanics projects expose KP/Omega-style Geotech and Structure import fields.",
+        "SAIEG / Generic projects expose the generic rock-core fields.",
+        "Coring imports can accept either recovery totals (m), percentages, or a mixture.",
+        "Coring comments/notes are imported.",
+        "Header row is auto-detected rather than blindly using the first non-empty row.",
+        "Header row can be corrected manually.",
+        "Default Location can be selected for single-hole / single-test-pit worksheets with no Location ID column.",
+        "Expanded header aliases improve automatic mapping from legacy Excel/CSV files.",
+        "Imports validate target dataset vs investigation type.",
+        "Duplicate interval/structure/sample records are skipped instead of silently duplicating data."
+      ],
+      "sourceArchive": "StrataBase_v0.8.3.zip",
+      "sourceDocument": "README_v0.8.3.txt"
     },
     {
       "version": "0.8.2",
-      "dateLabel": "27 October 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Archived build",
-      "summary": "Early StrataBase application build preserved.",
-      "limitations": "Full change record needs source comparison.",
+      "summary": "Project-level Data Review.",
+      "limitations": "",
       "changes": [
-        "Early StrataBase application build preserved."
-      ]
+        "Project-level Data Review.",
+        "Filter logged records by investigation type, location and dataset.",
+        "Edit/delete records directly from Data Review.",
+        "Dynamic Summary Preview with auto-detected, editable and selectable headers.",
+        "Project-level Rock Mechanics logging configuration.",
+        "KP Rock Mechanics Standard (default) preserves the Omega-derived company workflow.",
+        "SAIEG / Generic Rock Core remains available.",
+        "KP Geotech fields include zone/discontinuity type, wall strength, fracture angle bins, spun joints and Jn/Jr/Ja.",
+        "KP Structure fields include Alpha/Beta/Gamma, orientation status, confidence, JRC, wall strength, infill and thickness.",
+        "Data & Reports only offers PDF/log types enabled for the project.",
+        "Data Review linked from Project Actions and Data & Reports."
+      ],
+      "sourceArchive": "StrataBase_v0.8.2.zip",
+      "sourceDocument": "README_v0.8.2.txt"
     },
     {
       "version": "0.8.1",
-      "dateLabel": "27 October 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Archived build",
-      "summary": "Early StrataBase application build preserved.",
-      "limitations": "Full change record needs source comparison.",
+      "summary": "Project-level Laboratory Library with Omamanya Laboratory Services and Civilab preloaded.",
+      "limitations": "",
       "changes": [
-        "Early StrataBase application build preserved."
-      ]
+        "Project-level Laboratory Library with Omamanya Laboratory Services and Civilab preloaded.",
+        "Per-project laboratory selection in Project Settings.",
+        "Samples & Laboratory management workspace with bulk lab, status and requested-test assignment.",
+        "Sample material/origin inferred automatically from logged geology/profile at sample depth where possible.",
+        "Sample Register export to CSV or Excel.",
+        "Laboratory Schedule Excel generation using project, laboratory and sample metadata.",
+        "Dynamic Investigation Summary builder: group horizon columns by Origin/Material, Weathering, Strength, Origin+Weathering or Origin+Strength; detected columns can be renamed/deselected; CSV/Excel export.",
+        "Staged CSV / Excel import with column mapping and preview for Locations, Samples, TP profiles, Coring, Geology, Structures, Groundwater and Percussion Chip Logs.",
+        "Print-ready / Save-as-PDF log prototypes for Test Pits, Core Boreholes and Percussion Boreholes, with depth-scaled pagination and inherited project/location metadata.",
+        "Project setup now includes report contact, PO number, organisation and laboratory selection.",
+        "Location setup now includes proposed structure/area, drilled/excavated by, diameter/width and inclination for summaries/logs.",
+        "Rock Mechanics field sample capture no longer asks for laboratory/test assignment; those are handled at project level.",
+        "v0.8 data is copied forward to a new v0.8.1 localStorage key; the v0.8 copy is not deleted.",
+        "JSON project/full backup remains available.",
+        "Excel import/export uses SheetJS loaded in the browser. The StrataBase service worker runtime-caches successful GET requests, so after an online load it can normally remain available offline. CSV and core logging remain independent of the spreadsheet library.",
+        "v1.0 remains the target for online field-testing infrastructure."
+      ],
+      "sourceArchive": "StrataBase_v0.8.1.zip",
+      "sourceDocument": "README_v0.8.1.txt"
     },
     {
       "version": "0.8",
-      "dateLabel": "27 October 2026",
+      "dateLabel": "Historical build · date not independently confirmed",
       "channel": "history",
       "status": "Archived build",
-      "summary": "Earliest archived StrataBase v0.8 package.",
-      "limitations": "Full change record needs source comparison.",
+      "summary": "New StrataBase identity and SB monogram.",
+      "limitations": "",
       "changes": [
-        "Earliest archived StrataBase v0.8 package."
-      ]
+        "New StrataBase identity and SB monogram.",
+        "Persistent desktop sidebar; fully collapsible/off-canvas on tablets and phones.",
+        "Dashboard -> Projects -> Project Overview -> Investigations -> Location Workspace.",
+        "Contextual top tabs remain inside an investigation location for fast field logging.",
+        "Project-level navigation: Overview, Investigations, QC & Review, Data & Reports, Project Settings.",
+        "Project metadata (client, PA/project number, site, CRS, logger) entered once.",
+        "Investigation locations inherit project context instead of repeating client/project details.",
+        "Dedicated Add/Edit Project pages.",
+        "Dedicated Add/Edit Location pages.",
+        "Project overview with investigation counts, metres recorded, sample counts and QC stats.",
+        "Retains v0.7 SAIEG/MCCSTO-aligned logging concepts and investigation-specific modules.",
+        "Test Pit, Geotechnical Core BH, Rock Mechanics BH and Percussion BH workflows.",
+        "Contextual top tabs retained for each active location.",
+        "Coring calculations; interval overlap prevention; previous geology description helper; auto next-depth behavior.",
+        "Generic delete control added to captured record tables.",
+        "Missing v0.7 record-save handlers completed for geology, discontinuities, structures, samples, groundwater, notes and chips.",
+        "QC moved to project level.",
+        "Filters by investigation type."
+      ],
+      "sourceArchive": "StrataBase_v0.8.zip",
+      "sourceDocument": "README_v0.8.txt"
     },
     {
       "version": "0.7",
-      "dateLabel": "2 October 2026",
+      "dateLabel": "Historical prototype · date not independently confirmed",
       "channel": "history",
-      "status": "Field Platform prototype",
-      "summary": "Archived Geotechnical Field Platform v0.7 prototype — early foundation of the StrataBase concept.",
-      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "status": "Prototype",
+      "summary": "Borehole rock description sequence now follows the requested field order:.",
+      "limitations": "",
       "changes": [
-        "Archived Geotechnical Field Platform v0.7 prototype — early foundation of the StrataBase concept."
-      ]
+        "Borehole rock description sequence now follows the requested field order:",
+        "Grain size, weathering, joint spacing and strength use standard-guided dropdowns.",
+        "Borehole geology has Rock / Soil modes; drilled soil uses Colour, Texture and Origin.",
+        "Added Use Previous Description for repetitive BH logging.",
+        "Geology, Coring and Percussion Chip intervals carry previous To into next From.",
+        "Location creation/editing is separated: a new ID can no longer silently overwrite an existing location.",
+        "After saving a new location it stays active for logging, while the location form clears for the next entry.",
+        "Rock Mechanics laboratory samples now use an Omega-style laboratory test checklist.",
+        "Test Pit EOH/stability use quick standard-guided choices.",
+        "Added more groundwater guidance."
+      ],
+      "sourceArchive": "Geotechnical_Field_Platform_v0.7.zip",
+      "sourceDocument": "README.txt"
     },
     {
       "version": "0.6",
-      "dateLabel": "2 October 2026",
+      "dateLabel": "Historical prototype · date not independently confirmed",
       "channel": "history",
-      "status": "Field Platform prototype",
-      "summary": "Archived Geotechnical Field Platform v0.6 prototype — early foundation of the StrataBase concept.",
-      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "status": "Prototype",
+      "summary": "Saving a location now automatically clears the location form for the next location.",
+      "limitations": "",
       "changes": [
-        "Archived Geotechnical Field Platform v0.6 prototype — early foundation of the StrataBase concept."
-      ]
+        "Saving a location now automatically clears the location form for the next location.",
+        "Legend picker now behaves like a searchable combobox: dropdown opens only when the field is clicked/focused.",
+        "Clarified Material / Lithology vs Log Legend / Plot Symbol.",
+        "Drilling setup moved into Overview for boreholes.",
+        "Test Pit samples no longer show Result / Value.",
+        "Rock Mechanics sampling simplified to two top-level categories: Laboratory Sample or Point Load.",
+        "Point Load-specific fields remain hidden unless Point Load is selected.",
+        "Added inline guidance to structural orientation fields and TP descriptors.",
+        "Aperture renamed to Aperture / Separation and marked as optional.",
+        "Retained location-specific sample types and interval QA checks."
+      ],
+      "sourceArchive": "Geotechnical_Field_Platform_v0.6.zip",
+      "sourceDocument": "README.txt"
     },
     {
       "version": "0.5",
-      "dateLabel": "2 October 2026",
+      "dateLabel": "Historical prototype · date not independently confirmed",
       "channel": "history",
-      "status": "Field Platform prototype",
-      "summary": "Archived Geotechnical Field Platform v0.5 prototype — early foundation of the StrataBase concept.",
-      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "status": "Prototype",
+      "summary": "Project selector and Create Project disappear after entering an active project.",
+      "limitations": "",
       "changes": [
-        "Archived Geotechnical Field Platform v0.5 prototype — early foundation of the StrataBase concept."
-      ]
+        "Project selector and Create Project disappear after entering an active project.",
+        "Deliberate ← Projects button is used to return and change project.",
+        "Active Location remains available while working inside a project.",
+        "Test Pit locations use Date of Excavation only and auto-fill today's date.",
+        "Copy Setup from Previous Location carries CRS, contractor, machine/rig and logger.",
+        "Test Pit profile stays on Profile after saving and carries previous To depth into next From.",
+        "Interval overlap/invalid-depth checks added to TP profile and key interval modules.",
+        "Standalone Legends tab removed; legends are now selected during logging.",
+        "Expanded SAIEG-derived material legend library, alphabetically searchable.",
+        "Test Pit sample types restricted to Large Disturbed, Small Disturbed, Undisturbed and Piston.",
+        "Point-load Reset Value is only visible for Point Load.",
+        "Test Pit groundwater includes separate seepage-rate classification and observation/timing note."
+      ],
+      "sourceArchive": "Geotechnical_Field_Platform_v0.5.zip",
+      "sourceDocument": "README.txt"
     },
     {
       "version": "0.4",
-      "dateLabel": "2 October 2026",
+      "dateLabel": "Historical prototype · date not independently confirmed",
       "channel": "history",
-      "status": "Field Platform prototype",
-      "summary": "Archived Geotechnical Field Platform v0.4 prototype — early foundation of the StrataBase concept.",
-      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "status": "Prototype",
+      "summary": "Renamed an internal JavaScript function named location().",
+      "limitations": "",
       "changes": [
-        "Archived Geotechnical Field Platform v0.4 prototype — early foundation of the StrataBase concept."
-      ]
+        "Renamed an internal JavaScript function named location().",
+        "Only the Projects tab is available until a project is created or selected.",
+        "Location selector and New Location are disabled until a project is active.",
+        "On non-Projects tabs the main header changes from the generic app name to the active Project Name.",
+        "The subtitle still identifies the Geotechnical Field Platform and shows job/client context.",
+        "Top project/location controls are aligned consistently."
+      ],
+      "sourceArchive": "Geotechnical_Field_Platform_v0.4.zip",
+      "sourceDocument": "README.txt"
     },
     {
       "version": "0.3",
-      "dateLabel": "2 October 2026",
+      "dateLabel": "Historical prototype · date not independently confirmed",
       "channel": "history",
-      "status": "Field Platform prototype",
-      "summary": "Archived Geotechnical Field Platform v0.3 prototype — early foundation of the StrataBase concept.",
-      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "status": "Prototype",
+      "summary": "Corrected top Create Project / New Location alignment on desktop/laptop.",
+      "limitations": "",
       "changes": [
-        "Archived Geotechnical Field Platform v0.3 prototype — early foundation of the StrataBase concept."
-      ]
+        "Corrected top Create Project / New Location alignment on desktop/laptop.",
+        "Hardened project creation when opened directly from a local file.",
+        "Added visible local-storage status.",
+        "Project creation now updates the interface before attempting persistence.",
+        "If a browser blocks localStorage for file:// pages, the prototype still works for the current session."
+      ],
+      "sourceArchive": "Geotechnical_Field_Platform_v0.3.zip",
+      "sourceDocument": "README.txt"
     },
     {
       "version": "0.2",
-      "dateLabel": "2 October 2026",
+      "dateLabel": "Historical prototype · date not independently confirmed",
       "channel": "history",
-      "status": "Field Platform prototype",
-      "summary": "Archived Geotechnical Field Platform v0.2 prototype — early foundation of the StrataBase concept.",
-      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "status": "Prototype",
+      "summary": "Removed the explanatory 'Why these methods exist' section.",
+      "limitations": "",
       "changes": [
-        "Archived Geotechnical Field Platform v0.2 prototype — early foundation of the StrataBase concept."
-      ]
+        "Removed the explanatory 'Why these methods exist' section.",
+        "Fixed checkbox and form alignment.",
+        "Improved responsive layout for laptop, desktop, tablet and phone.",
+        "Renamed 'Site / Mine / Area' to 'Project Location / Area (optional)'.",
+        "Added a visible Project Register.",
+        "Clarified the New Project -> Save Project workflow.",
+        "Improved project selection/editing visibility.",
+        "Local file use no longer attempts to register the service worker."
+      ],
+      "sourceArchive": "Geotechnical_Field_Platform_v0.2.zip",
+      "sourceDocument": "README.txt"
     },
     {
       "version": "0.1",
-      "dateLabel": "2 October 2026",
+      "dateLabel": "Historical prototype · date not independently confirmed",
       "channel": "history",
-      "status": "Field Platform prototype",
-      "summary": "Archived Geotechnical Field Platform v0.1 prototype — early foundation of the StrataBase concept.",
-      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "status": "Prototype",
+      "summary": "Established the Project → Investigation Location → Investigation Type → Module → Record hierarchy.",
+      "limitations": "Prototype only: no cloud synchronisation, Excel workflows, PDF logs, or comprehensive record editing.",
       "changes": [
-        "Archived Geotechnical Field Platform v0.1 prototype — early foundation of the StrataBase concept."
-      ]
+        "Established the Project → Investigation Location → Investigation Type → Module → Record hierarchy.",
+        "Created a local multi-project prototype with mixed test pits, geotechnical core boreholes, rock-mechanics boreholes and percussion boreholes.",
+        "Added project/location metadata, basic logging modules and a lithology-legend framework.",
+        "Introduced local/offline storage, project JSON backups and a progressive-web-app shell."
+      ],
+      "sourceArchive": "Geotechnical_Field_Platform_v0.1.zip",
+      "sourceDocument": "README.txt"
     }
   ]
 }
