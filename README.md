@@ -1,30 +1,25 @@
-# StrataBase Public Website
+# StrataBase public website — Core Restored v2
 
-Independent static marketing website for `stratabase.co.za`. **Do not deploy this ZIP to `app.stratabase.co.za`.**
+A preservation-first update based on the archived `StrataBase_Website_CORE_READABILITY_BRAND.zip` source.
+
+## Preserved
+- Original SB brand favicon/logo, Core artwork and hero dashboard visual
+- Light / Core (dark) / system appearance controls (`site.js`)
+- Original full Help centre and `help.js`, plus existing Platform, Field workflow, Data & security, About, Privacy and Terms pages
+- Core Easter egg on About (original story and modal)
+- Original home background geometry and project-preview layout (no diagonal skew overlay)
+
+## Added
+- `/updates/`: searchable release notes; click each version to reveal specific changes and limitations
+- `/roadmap/`: labelled roadmap with clear difference between development and future ideas
+- Homepage release card and navigation/footer links to both pages
+- `assets/releases.json`: machine-readable version archive reconstructed conservatively from dated ZIPs and project information
 
 ## Deployment
+Static site: no build command, publish directory `.`. Root `index.html` must be deployed. Repository `stratabase-website` is separate from `stratabase-app`.
 
-- Create a **separate private repository** named `stratabase-website`. Upload these files to the repository root on `main`.
-- For an initial test, create a separate Netlify preview site from this repository, using no build command and publish directory `.`.
-- Review all links, About, Privacy and Terms against the current live website before switching the real domain. A copy of the existing live website was **not** available during this build, so existing website-specific functions are not guaranteed to be preserved.
-- When approved, connect the existing website Netlify project to this GitHub repo or configure the domain on the tested preview site. **Do not change the application Netlify project**.
+## Validation before replacing live site
+Verify menu links on desktop/mobile, appearance controls, Help search/navigation, Core story modal, privacy/terms, release filters, and app link. Validate actual sites under Netlify deploy preview or via deploy history so live rollback is available.
 
-## File layout
-- `index.html`: home
-- `updates/index.html`: searchable/filterable version notes
-- `roadmap/index.html`: public roadmap
-- `about/index.html`, `privacy/index.html`, `terms/index.html`: informational pages
-- `assets/styles.css`, `assets/site.js`: UI code
-- `assets/releases.json`: structured release note history
-- `assets/core-mark.svg`: original, editable geometric field/strata emblem
-
-## Maintenance
-
-Update `updates/index.html` and `assets/releases.json` together for now. Treat release dates marked approximate as unverified, and do not publish development features as production features. App repo and website repo remain independent.
-
-## Notes
-
-- No forms collecting personal data, no Supabase keys, no database dependency.
-- Google Fonts are optional; fallback fonts work offline.
-- Preview device is **illustrative UI**, not a screenshot of the live app.
-- The inherited privacy/terms content originated from the existing StrataBase app package and should be checked against the live website before replacing it.
+## Historical accuracy
+Early versions (October–November 2026) are documented from archive filenames and file timestamps; these are not necessarily publication dates. Avoid inventing detailed fixes for versions not yet source-diffed.

@@ -1,6 +1,7 @@
 {
-  "schema": 1,
+  "schema": 2,
   "updated": "2026-11-05",
+  "sourceNote": "Development history reconstructed from retained versioned ZIP names, prior project release descriptions, and dated archive metadata. Dates for early entries may reflect archive timestamps rather than public release dates.",
   "releaseNotes": [
     {
       "version": "0.9.9.5 Alpha 2",
@@ -8,7 +9,14 @@
       "channel": "development",
       "status": "Testing",
       "summary": "Project Library search, sorting and country filters; in-app Quick Log preview; laboratory Sample List with Batch Edit shortcut; streamlined QC summary and sidebar refinements.",
-      "limitations": "Development candidate only. Formal reviewer approvals and selective offline downloads are not active; full workflow testing is ongoing."
+      "limitations": "Development candidate only. Formal reviewer approvals and selective offline downloads are not active; full workflow testing is ongoing.",
+      "changes": [
+        "Project library search, sorting, country/status filtering introduced in development.",
+        "Quick Log in-app factual preview and selected-investigation PDF access added for testing.",
+        "Laboratory Sample List and sample Batch Edit entry points introduced.",
+        "Log Review and QC summary navigation integrated into Data Review.",
+        "Desktop sidebar and release-notes presentation iterated; formal reviewer approvals remain under development."
+      ]
     },
     {
       "version": "0.9.9.5 Alpha 1",
@@ -16,7 +24,13 @@
       "channel": "development",
       "status": "Testing",
       "summary": "Field workflow consistency improvements, batch-edit pagination, recovery QC override, Data Review layout and update handling improvements.",
-      "limitations": "Development candidate; live multi-device integration and full lifecycle QA incomplete."
+      "limitations": "Development candidate; live multi-device integration and full lifecycle QA incomplete.",
+      "changes": [
+        "Expanded depth carry-forward and geological description reuse behaviours.",
+        "Added Batch Edit pagination and an explicit excessive-recovery QC exception path.",
+        "Introduced collapsible Data Review sections, desktop sidebar controls and update-notification revisions.",
+        "Development checks passed; live field and multi-device regression testing remains necessary."
+      ]
     },
     {
       "version": "0.9.9.4",
@@ -24,7 +38,13 @@
       "channel": "production",
       "status": "Field candidate",
       "summary": "Import exception handling for invalid source rows, earlier SPT/Point Load fixes, and Windows PWA icon updates.",
-      "limitations": "Controlled field candidate; additional QA and fixes identified."
+      "limitations": "Controlled field candidate; additional QA and fixes identified.",
+      "changes": [
+        "Added import exception handling: invalid source rows can be excluded with an exception report while valid records proceed.",
+        "Retained recovery, SPT and Point Load improvements from development candidates.",
+        "Updated Windows PWA icon assets and manifest references.",
+        "Released as a controlled production field candidate; later QA identified form and review issues."
+      ]
     },
     {
       "version": "0.9.9.3",
@@ -32,7 +52,12 @@
       "channel": "development",
       "status": "Development candidate",
       "summary": "In-situ form state fixes and missing-field geological inheritance on editing existing Point Load records.",
-      "limitations": "Candidate status; do not treat as an independently certified stable release."
+      "limitations": "Candidate status; do not treat as an independently certified stable release.",
+      "changes": [
+        "Fixed inconsistent in-situ SPT/Point Load form visibility when editing or changing test method.",
+        "Improved geological material and weathering inheritance for existing Point Load tests when fields are missing.",
+        "Preserved manually entered geological descriptions when editing."
+      ]
     },
     {
       "version": "0.9.9.2",
@@ -40,7 +65,12 @@
       "channel": "development",
       "status": "Development candidate",
       "summary": "Styled discontinuity follow-up, SPT running blow calculations and Point Load geological inheritance.",
-      "limitations": "Candidate version; later issues were addressed in subsequent builds."
+      "limitations": "Candidate version; later issues were addressed in subsequent builds.",
+      "changes": [
+        "Replaced generic discontinuity follow-up with an in-app styled prompt.",
+        "Added automatic SPT N-value calculations with safeguards for partial penetration and override.",
+        "Introduced depth-based Point Load geological material/weathering inheritance."
+      ]
     },
     {
       "version": "0.9.9.1",
@@ -48,7 +78,13 @@
       "channel": "development",
       "status": "Development candidate",
       "summary": "Data workflow changes including Geotech forms, Batch Edit and Smart Merge groundwork.",
-      "limitations": "Not a production-approved release."
+      "limitations": "Not a production-approved release.",
+      "changes": [
+        "Expanded Rock Mechanics Geotech logging and create/edit workflows.",
+        "Introduced or expanded spreadsheet-style Batch Edit and conservative Smart Merge workflows.",
+        "Reorganised data import, exports and Data Review entry points.",
+        "Development-only candidate; not signed off for production."
+      ]
     },
     {
       "version": "0.9.8",
@@ -56,7 +92,12 @@
       "channel": "production",
       "status": "Stable baseline",
       "summary": "Established GitHub version-control baseline and field-tested structural logging.",
-      "limitations": "Geotechnical form and editing issues were subsequently identified."
+      "limitations": "Geotechnical form and editing issues were subsequently identified.",
+      "changes": [
+        "Preserved as the first GitHub-tagged stable baseline.",
+        "Enhanced field import/export and structural logging behaviour.",
+        "Field testing identified Geotech create/edit differences, motivating subsequent development."
+      ]
     },
     {
       "version": "0.9.7",
@@ -64,7 +105,12 @@
       "channel": "history",
       "status": "Historical milestone",
       "summary": "Structural logging ordering improvements and form refinements.",
-      "limitations": "Exact publication date requires archive verification."
+      "limitations": "Exact publication date requires archive verification.",
+      "changes": [
+        "Structural logging field order and orientation-related inputs refined.",
+        "Improved geotechnical field logging layout and duplicate-record handling where applicable.",
+        "Historical deployable archive retained."
+      ]
     },
     {
       "version": "0.9.6",
@@ -72,7 +118,11 @@
       "channel": "history",
       "status": "Historical milestone",
       "summary": "Protection against duplicate active project codes.",
-      "limitations": "Exact publication date requires archive verification."
+      "limitations": "Exact publication date requires archive verification.",
+      "changes": [
+        "Introduced duplicate active project code protection.",
+        "Email/password authentication, verification and organisation approval expanded through the v0.9.5–v0.9.6 development period."
+      ]
     },
     {
       "version": "0.9.5",
@@ -80,7 +130,11 @@
       "channel": "history",
       "status": "Historical milestone",
       "summary": "Email/password verification and organisation membership approval.",
-      "limitations": "Exact publication date requires archive verification."
+      "limitations": "Exact publication date requires archive verification.",
+      "changes": [
+        "Expanded email/password sign-in with email verification.",
+        "Added organisation access-request and approval workflow."
+      ]
     },
     {
       "version": "0.9.4",
@@ -88,7 +142,220 @@
       "channel": "history",
       "status": "Historical milestone",
       "summary": "Manual Google Drive archive, download and restore workflow.",
-      "limitations": "Exact publication date requires archive verification."
+      "limitations": "Exact publication date requires archive verification.",
+      "changes": [
+        "Introduced a manual Google Drive archive, downloadable backup and restore workflow.",
+        "Cloud backup round-trip testing was performed during development."
+      ]
+    },
+    {
+      "version": "0.9.3",
+      "dateLabel": "2 November 2026",
+      "channel": "history",
+      "status": "Archived build",
+      "summary": "An early named StrataBase application release.",
+      "limitations": "Archived package retained; detailed line-by-line changes not yet verified.",
+      "changes": [
+        "An early named StrataBase application release."
+      ]
+    },
+    {
+      "version": "0.9.2",
+      "dateLabel": "2 November 2026",
+      "channel": "history",
+      "status": "Archived build",
+      "summary": "An intermediate early StrataBase iteration.",
+      "limitations": "Full change record needs source comparison.",
+      "changes": [
+        "An intermediate early StrataBase iteration."
+      ]
+    },
+    {
+      "version": "0.9.1",
+      "dateLabel": "2 November 2026",
+      "channel": "history",
+      "status": "Archived build",
+      "summary": "An intermediate early StrataBase iteration.",
+      "limitations": "Full change record needs source comparison.",
+      "changes": [
+        "An intermediate early StrataBase iteration."
+      ]
+    },
+    {
+      "version": "0.9.0",
+      "dateLabel": "2 November 2026",
+      "channel": "history",
+      "status": "Field beta",
+      "summary": "Field beta and Omega mapping iterations documented in retained archive names.",
+      "limitations": "Full change record needs source comparison.",
+      "changes": [
+        "Field beta and Omega mapping iterations documented in retained archive names."
+      ]
+    },
+    {
+      "version": "0.8.8",
+      "dateLabel": "2 November 2026",
+      "channel": "history",
+      "status": "Archived build",
+      "summary": "Official-final-labelled package preserved in the archive.",
+      "limitations": "Full change record needs source comparison.",
+      "changes": [
+        "Official-final-labelled package preserved in the archive."
+      ]
+    },
+    {
+      "version": "0.8.7",
+      "dateLabel": "28 October 2026",
+      "channel": "history",
+      "status": "Archived build",
+      "summary": "Early multi-investigation StrataBase application build preserved.",
+      "limitations": "Full change record needs source comparison.",
+      "changes": [
+        "Early multi-investigation StrataBase application build preserved."
+      ]
+    },
+    {
+      "version": "0.8.6",
+      "dateLabel": "27 October 2026",
+      "channel": "history",
+      "status": "Archived build",
+      "summary": "Early StrataBase application build preserved.",
+      "limitations": "Full change record needs source comparison.",
+      "changes": [
+        "Early StrataBase application build preserved."
+      ]
+    },
+    {
+      "version": "0.8.5",
+      "dateLabel": "27 October 2026",
+      "channel": "history",
+      "status": "Archived build",
+      "summary": "Early StrataBase application build preserved.",
+      "limitations": "Full change record needs source comparison.",
+      "changes": [
+        "Early StrataBase application build preserved."
+      ]
+    },
+    {
+      "version": "0.8.3",
+      "dateLabel": "27 October 2026",
+      "channel": "history",
+      "status": "Archived build",
+      "summary": "Early StrataBase application build preserved.",
+      "limitations": "Full change record needs source comparison.",
+      "changes": [
+        "Early StrataBase application build preserved."
+      ]
+    },
+    {
+      "version": "0.8.2",
+      "dateLabel": "27 October 2026",
+      "channel": "history",
+      "status": "Archived build",
+      "summary": "Early StrataBase application build preserved.",
+      "limitations": "Full change record needs source comparison.",
+      "changes": [
+        "Early StrataBase application build preserved."
+      ]
+    },
+    {
+      "version": "0.8.1",
+      "dateLabel": "27 October 2026",
+      "channel": "history",
+      "status": "Archived build",
+      "summary": "Early StrataBase application build preserved.",
+      "limitations": "Full change record needs source comparison.",
+      "changes": [
+        "Early StrataBase application build preserved."
+      ]
+    },
+    {
+      "version": "0.8",
+      "dateLabel": "27 October 2026",
+      "channel": "history",
+      "status": "Archived build",
+      "summary": "Earliest archived StrataBase v0.8 package.",
+      "limitations": "Full change record needs source comparison.",
+      "changes": [
+        "Earliest archived StrataBase v0.8 package."
+      ]
+    },
+    {
+      "version": "0.7",
+      "dateLabel": "2 October 2026",
+      "channel": "history",
+      "status": "Field Platform prototype",
+      "summary": "Archived Geotechnical Field Platform v0.7 prototype — early foundation of the StrataBase concept.",
+      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "changes": [
+        "Archived Geotechnical Field Platform v0.7 prototype — early foundation of the StrataBase concept."
+      ]
+    },
+    {
+      "version": "0.6",
+      "dateLabel": "2 October 2026",
+      "channel": "history",
+      "status": "Field Platform prototype",
+      "summary": "Archived Geotechnical Field Platform v0.6 prototype — early foundation of the StrataBase concept.",
+      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "changes": [
+        "Archived Geotechnical Field Platform v0.6 prototype — early foundation of the StrataBase concept."
+      ]
+    },
+    {
+      "version": "0.5",
+      "dateLabel": "2 October 2026",
+      "channel": "history",
+      "status": "Field Platform prototype",
+      "summary": "Archived Geotechnical Field Platform v0.5 prototype — early foundation of the StrataBase concept.",
+      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "changes": [
+        "Archived Geotechnical Field Platform v0.5 prototype — early foundation of the StrataBase concept."
+      ]
+    },
+    {
+      "version": "0.4",
+      "dateLabel": "2 October 2026",
+      "channel": "history",
+      "status": "Field Platform prototype",
+      "summary": "Archived Geotechnical Field Platform v0.4 prototype — early foundation of the StrataBase concept.",
+      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "changes": [
+        "Archived Geotechnical Field Platform v0.4 prototype — early foundation of the StrataBase concept."
+      ]
+    },
+    {
+      "version": "0.3",
+      "dateLabel": "2 October 2026",
+      "channel": "history",
+      "status": "Field Platform prototype",
+      "summary": "Archived Geotechnical Field Platform v0.3 prototype — early foundation of the StrataBase concept.",
+      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "changes": [
+        "Archived Geotechnical Field Platform v0.3 prototype — early foundation of the StrataBase concept."
+      ]
+    },
+    {
+      "version": "0.2",
+      "dateLabel": "2 October 2026",
+      "channel": "history",
+      "status": "Field Platform prototype",
+      "summary": "Archived Geotechnical Field Platform v0.2 prototype — early foundation of the StrataBase concept.",
+      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "changes": [
+        "Archived Geotechnical Field Platform v0.2 prototype — early foundation of the StrataBase concept."
+      ]
+    },
+    {
+      "version": "0.1",
+      "dateLabel": "2 October 2026",
+      "channel": "history",
+      "status": "Field Platform prototype",
+      "summary": "Archived Geotechnical Field Platform v0.1 prototype — early foundation of the StrataBase concept.",
+      "limitations": "Individual features and precise release timing require a verified archive comparison.",
+      "changes": [
+        "Archived Geotechnical Field Platform v0.1 prototype — early foundation of the StrataBase concept."
+      ]
     }
   ]
 }
